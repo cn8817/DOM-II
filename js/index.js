@@ -8,6 +8,14 @@ picClick.addEventListener('click', function(){
     alert('hi');
 })
 
+document.addEventListener('click', function(){
+    alert('document')
+})
+
+document.addEventListener('click', function(event){
+    event.stopImmediatePropagation()
+})
+
 const dblClicking = document.querySelector('.img-content img')
 dblClicking.addEventListener('dblclick', function(){
     alert('bye');
@@ -47,3 +55,8 @@ password.addEventListener('focus', (event) => {
 password.addEventListener('blur', (event) => {
   event.target.style.background = '';
 });
+
+const preventNav = document.querySelector('.nav-link')
+preventNav.addEventListener('click', function(e){
+    e.preventDefault()
+})
